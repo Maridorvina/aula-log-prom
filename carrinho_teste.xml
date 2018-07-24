@@ -1,0 +1,21 @@
+<carrinho>
+<produtos>
+<produto>
+<id>6237</id>
+<quantidade>1</quantidade>
+<nome>Videogame 4</nome>
+<preco>4000</preco>
+</produto>
+<produto>
+<id>3467</id>
+<qunatidade>2</quantidade>
+<nome>Jogo de esporte</nome>
+<preco>120</preco>
+</produto>
+	</produtos>
+<total>4120</total>
+<entrega>
+<rua>Rua Olievira Melo 670, casa 1</rua>
+<cidade></cidade>
+</entrega>
+</carrinho>
