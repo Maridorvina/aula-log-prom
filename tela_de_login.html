@@ -2,18 +2,34 @@
 <html>
 <meta charset="utf-8">
 <script>
-	    var loginCadastrado = "banana";
+	
+	var loginCadastrado = "banana321";
     var senhaCadastrada = "banana321";
+    
+    var maximoTentativas = 3; 
+    var minimoTentativas = 1;
 
-    var loginInformado = prompt("Informe seu login");
-    var senhaInformada = prompt("Informe sua senha");
 
-    if( loginCadastrado == loginInformado && senhaCadastrada == senhaInformada ) {
+	while (minimoTentativas <=  maximoTentativas) {
 
-        alert("Bem-vindo ao sistema " + loginInformado);
-    } else {
+		var loginInformado = prompt("Informe seu login");
+	    var senhaInformada = prompt("Informe sua senha");	
+    
+	    if( loginCadastrado == loginInformado && senhaCadastrada == senhaInformada ) {
+	    //Condição if se caso acertar na primeira tentativa...execute esse bloco
+	        alert("Bem-vindo ao sistema " + loginInformado);
 
-        alert("Login inválido. Tente novamente");
+	        minimoTentativas = maximoTentativas; // Se acertar, usar todas as tentativas. Então somar + 1 a cada tentativa.
+
+	    } else {
+	    //Senão acertar... faça (execute esse bloco).	
+	        alert("Login inválido. Tente novamente");
+	    }
+
+	   minimoTentativas = minimoTentativas + 1 //Vai para mais alternativas caso não acertar senha e login
+
     }
+
 </script>
+
 </html>

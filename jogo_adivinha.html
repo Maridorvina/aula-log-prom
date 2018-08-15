@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
-
-
-<meta charset="UTF-8">
 <title>Jogo de adivinha</title>
 
-<h1>Jogo adivinha</h1>
-<h2>Qual é a resposta correta?</h2>
+<meta charset="UTF-8">
+
+
+<input/>
+<button>Verifique sua resposta</button>
 
 <script>
+
 	function pulaLinha() {
 
-		document.write("<br>");
 		document.write("<br>");
 	}
 
@@ -19,21 +19,49 @@
 
 		document.write(frase);
 		pulaLinha();
-	}
+	}	
 
-	var adivinhaNumero = Math.round(Math.random() * 100);
+
+	var adivinhaNumero = Math.round(Math.random() * 10) ;
+
+	var input = querySelector("input");
+	input.focus();
+	
 	//Mostra o número pelo console para verificar qual o número foi digitado.
-	console.log(adivinhaNumero);
+	//console.log(adivinhaNumero);
 
-	var chute = parseInt(prompt ("Digite seu chute!"));
+	function adivinhaOnumero() {
 
-	if(chute == adivinhaNumero) {
-		mostra("Você acertou!");
-	} //SENÃO for igual ao numero digitado/pensado
+		var tentativas = 1;
 
-	else {
-		mostra("Você errou, o numero digitado foi " + adivinhaNumero + "<br>Tente novamente.");
+		while(tentativas <= 3) {
+
+			var chute = parseInt(prompt ("Digite seu chute!"));
+
+			if(chute == adivinhaNumero) {
+
+				mostra("Você acertou, o numero pensado era " + adivinhaNumero);
+				tentativas = 4; //Ou pode ser utilizado 'break' para interromper a quantidade de tentativas de acertos.
+
+			}//SE if for igual ao numero digitado/pensado "Você acertou"
+			else {
+
+				mostra("Você errou!");
+			}//SENÃO else for igual ao numero digitado/pensado "Você errou"
+
+			tentativas++;
+		}
+
+		input.value = "";
+		input.focus();
 	}
+
+	var button = querySelector("button");
+
+	button.onclick = adivinhaOnumero;
+
+	mostra("FIM");
+	
 
 </script>
 

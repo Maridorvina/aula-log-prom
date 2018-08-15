@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<meta charset="UTF-8">
+
+<h1>Média de gastos eventos</h1>
+<script>
+
+	function pulaLinha() {
+
+		document.write("<br>");
+		document.write("<br>");
+	}
+
+	function mostra(frase) {
+
+		document.write(frase);
+		pulaLinha();
+	} 
+
+	var totalDeEventos = parseInt(prompt("Informe o total de eventos "))
+	
+	var contador = 1;	
+
+	var totalGastoComEventos = 0;
+
+	while(contador <= totalDeEventos) {
+
+		var gastos = parseFloat(prompt("Informe o total de gastos com evento"))
+
+		totalGastoComEventos = totalGastoComEventos + gastos;
+		
+		contador++;
+	}	 
+
+	var media = totalGastoComEventos / totalDeEventos;
+
+	mostra("A média de gastos com eventos é de R$ " + media.toFixed(3).replace("." , ","));
+	mostra("FIM")
+
+</script>
+
+<script>
+	
+	var contador = 1;
+
+	while(contador <= 3) {
+
+		alert("Deixe-me entrar!");
+			
+		contador++;
+
+	}
+
+</script>
+
+</html>
